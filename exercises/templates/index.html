@@ -6,7 +6,23 @@
         url_for('static', filename='style.css') }}">
         </head>
         <body>
+            <div class=title>
             <h1>Basketball:)</h1>
             <p>it brings me and friends together, and also it puts out all my passion and energy</p>
+            </div>
+            {% if likes_same_sport == True %}
+                <p> i dont know anyone who likes the same the sport, But i want to know one: </p>
+            {% else %}
+                <p> i have many friends that likes the same sport:)</p>    
+            
+            <h2>Players!!</h2>
+    
+        <ul>
+            {%for player in players%}
+            <li>{{player}}</li>
+            {% endfor %}
+
+        </ul>
+        {% endif %}
         </body>
     </html>
